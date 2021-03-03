@@ -18,7 +18,9 @@ img {
   max-width: 100%;
   margin-bottom: -200px;
 }
-
+#desktop-pic {
+  display: none;
+}
 #body-container {
   width: 630px;
   margin: auto;
@@ -27,11 +29,11 @@ img {
 
 #grid {
   padding: 0 100px;
-  margin-top: -50px;
+  margin-top: -90px;
 }
 h1 {
   font-family: var(--title-font);
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -51,6 +53,21 @@ input {
   width: 100%;
   padding: 15px 0;
 }
+
+::-webkit-input-placeholder {
+  /* Edge */
+  color: var(--background);
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--background);
+}
+
+::placeholder {
+  color: var(--background);
+}
+
 input[type="checkbox"] {
   background-color: var(--secondary-color);
   border: none;
@@ -76,4 +93,83 @@ button {
   background-color: var(--main-color);
   color: white;
   margin-top: 30px;
+}
+
+@media only screen and (min-width: 950px) {
+  h1 {
+    font-size: 75px;
+    line-height: 100%;
+  }
+  #body-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100vw;
+  }
+
+  #desktop-pic {
+    display: block;
+    height: 100vh;
+    min-width: 700px;
+    margin-right: -350px;
+  }
+
+  #desktop-pic img {
+    height: 100%;
+  }
+
+  #mobile-pic {
+    display: none;
+  }
+
+  #grid {
+    margin-top: 5%;
+    max-width: 600px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #desktop-pic {
+    margin-right: 0;
+  }
+
+  form div {
+    padding: 10px 0;
+  }
+
+  label {
+    display: none;
+  }
+  input {
+    background-color: white;
+    border: 1px solid var(--third-color);
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 20px;
+  }
+
+  ::-webkit-input-placeholder {
+    /* Edge */
+    color: var(--third-color);
+    display: inline;
+    padding-left: 20px;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--third-color);
+    display: inline;
+    padding-left: 20px;
+  }
+
+  ::placeholder {
+    color: var(--third-color);
+    display: inline;
+    padding-left: 20px;
+  }
+
+  #terms-container input,
+  #terms-container label {
+    display: inline-block;
+  }
 }
